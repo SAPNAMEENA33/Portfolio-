@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sapna's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+   
+    body {
+      background: #000;
+      color: #fff;
+      padding-top: 80px;
+    }
+    
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; display: none; }
+    }
+       header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: cyan;
+      margin-left: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+    }
+    nav ul li {
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 8px 15px;
+      transition: 0.3s;
+    }
+    .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; 
+    }
+  }
+    nav ul li a:hover, nav ul li a.active {
+      background: cyan;
+      border-radius: 5px;
+    }
+  
+    #home {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 60px;
+      height: 100vh;
+      margin-top: 60px; 
+    }
+    .home-content {
+      flex: 1;
+      font-size: 24px;
+      transform: translatey(-20%);
+    }
+    .home-content h1 {
+      font-size: 60px;
+    }
+    .home-content .highlight {
+      color: cyan;
+    }
+    .resume-btn {
+      background: cyan;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    .resume-btn:hover {
+      background: #00bcd4;
+    }
+    .profile-pic img {
+        width: 450px;
+      border-radius: 0%;
+      height: 50%;
+      padding: 50px 40px;
+      transform: translatey(-20%);
+    }
+
+    #about {
+      text-align: center;
+  background: black; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 80px;
+    color: rgb(198, 241, 241); 
+}
+
+.about-container {
+    display: flex;
+    align-items: self-start; 
+     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    background: rgba(0, 255, 255, 0.1); 
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    align-items: self-start;
+    box-shadow: 0 0 10px cyan;
+    transition: transform 0.3s ease-in-out;
+    
+}
+.about-card:hover {
+    transform: scale(1.05);
+}
+
+.about-card h3 {
+   color: rgb(236, 167, 82) ;
+  
+}
+.about-card  p{
+  color: rgb(235, 229, 222) ;
+  text-align: left;
+  margin-left: 20px;
+}
+
+    #projects {
+      padding: 100px 20px;
+      text-align: center;
+      background: #111;
+    }
+    #projects h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 50px;
+      color: cyan;
+    }
+    .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; 
+}
+
+.project-card {
+  width: 45%;
+  max-width: 520px; 
+  padding: 30px;
+}
+
+    
+    .project-card video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .project-card h3 {
+      margin: 15px 0 10px;
+      font-size: 24px;
+    }
+    .project-card p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 15px;
+      background: cyan;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .project-card a:hover {
+      background: #00bcd4;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.2);
+    }
+     
+    #contact {
+  text-align: center;
+  padding: 80px 20px;
+  background: #111;
+  color: white;
+  padding-top: 130px;
+}
+
+#contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: cyan;
+}
+
+.contact-container {
+  max-width: 500px;
+  margin: auto;
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid cyan;
+  border-radius: 5px;
+  background: #222;
+  color: white;
+}
+
+.contact-form button {
+  background: cyan;
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #00bcd4;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+
+
+  </style>
+</head>
+<body>
+ 
+  <!-- Navbar -->
+  <header>
+    <h2 class="logo">Portfolio</h2>
+    <nav>
+      <button class="menu-toggle">☰</button>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="home-content">
+      <h1>Hi, <br> I'm <span class="highlight">SAPNA</span></h1>
+      <h2>Full Stack Web Developer</h2>
+      <a href="\sapna resume.pdf" target="_blank" class="resume-btn">My Resume</a> </div>
+    <div class="profile-pic">
+      <img src="\uniform.jpg" alt="Profile Picture">
+    </div>
+  </section>
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-container">
+        <div class="about-card">
+            <h3>🎓 Education</h3><br>                    
+            <p>  ✅ B.Tech in Computer Science<br>
+                   SIRT College, Bhopal<br>
+                   <br>
+                  ✅Year of passing 2022 - 2026 <br>
+                  <br>
+                  ✅   Relevant Courses (Data Structures, Web Development ,C , C++, Oops Concept)
+            </p> </div>
+
+        <div class="about-card">
+            <h3>✈ NCC Cadet</h3><br>
+            <p>✅Rank :- CDT SAPNA MEENA</p>
+                                   <p>✅ Flying Experience ( done microlight flying, gliding, or aviation training)</p>
+            <p>✅Discipline, Leadership & Patriotism</p>
+            <p>✅ Combined Annual Training Camp (CATC)</p>
+           
+        </div>
+
+        <div class="about-card">
+          <h3>💻 Skills</h3><br> 
+          <p>Full Stack Developer Skills</p> <br>
+           <p> ✅ FRONTEND :- HTML, CSS, JavaScript, React.Js , Next.Js.<br>
+          <br> ✅ BACKEND :- Node.js , Express.Js , MongoDB , Mysql Skills.
+          </p>
+             </div>    </div>
+</section>
+
+  <!-- About Section 
+  <section id="about">
+    <h2>ABOUT ME</h2>
+    <div class="about-container">
+      <div class="about-card">
+        <h3>🎓 Education</h3>
+        <p><b>B.Tech Bachelors Degree</b><br>Computer Science & IT<br>SIRT</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Sirt.logo.gif" alt="SIRT Logo">
+      </div>
+      <div class="about-card">
+        <h3>✈ NCC Cadet</h3>
+        <p><b>Air Wing, NCC</b><br>Discipline, Leadership & Patriotism</p>
+        <img src="\myyy.jpg" alt="NCC Logo">
+      </div>
+      <div class="about-card">
+        <h3>💻 Skills</h3>
+        <p><b>Full Stack Developer Skills</b><br>
+         FRONTEND :- HTML, CSS, JavaScript, React.Js,Next.Js.<br>
+         BACKEND :- Node.js,Express.Js, MongoDB, etc.
+        </p>
+        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFuJTIwdXNpbmclMjBjb21wdXRlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Skills Logo">
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>PROJECTS</h2>
+    <div class="projects-container">
+      
+    <!-- Project Card 1: Game Project -->
+      <div class="project-card">
+        <video preload="auto" controls>
+          <source src="\20250322-1758-01.0192412.mp4" type="video/mp4"   autoplay muted loop>
+                </video>
+        <h3>H/M-Website</h3>
+        <p>H/M is a Swedish multinational fashion retailer. Skills i used in this project are HTML,CSS,JavaScript,Swiper-bundle,locomotive-scroll.css,ScrollTrigger  .</p>
+        <a href="https://www.linkedin.com/posts/sapna-meena-106555204_coding-shery-activity-7137426241665593345-6dsa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQM81YBzGuG77pM96-rKDVsbNine8XtGRM" target="_blank">View Source Code</a>
+      </div>
+      <!-- Project Card 2: Game Project -->
+      <div class="project-card">
+        <video preload="auto" controls>
+          <source src= "\20250323-1118-10.6179254.mp4" type="video/mp4">
+                </video>
+        <h3>Website</h3>
+        <p>Here i made the lagunitas Brewing website where i used the animations like HTML,CSS,JavaScript,Swiper-bundle,locomotive-scroll.css,ScrollTrigger  </p>
+        <a href="https://www.linkedin.com/posts/sapna-meena-106555204_coding-shery-activity-7137426241665593345-6dsa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQM81YBzGuG77pM96-rKDVsbNine8XtGRM" target="_blank">View Source Code</a>
+      </div>
+      <div class="project-card">
+        <video preload="auto" controls>
+          <source src=".vscode/sundown-website.mp4" type="video/mp4">
+                </video>
+        <h3>Sundown-Website</h3>
+      <p> Tech Stack: HTML, CSS, JavaScript </p> 
+        <p>A  website designed for an enhanced user experience and experiment different ui/ux designs. </p>
+        <a href="https://www.linkedin.com/posts/sapna-meena-106555204_coding-shery-activity-7137426241665593345-6dsa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQM81YBzGuG77pM96-rKDVsbNine8XtGRM" target="_blank">View Source Code</a>
+      </div>
+
+      <!-- Project Card 6: API -->
+      <div class="project-card">
+        <video preload="auto" controls>
+            <source src="\Screen Recording 2025-03-15 221718.mp4" type="video/mp4">
+                   </video>
+                 <h3>AI Chat boxProject</h3>
+        <p>Tech Stack: HTML, CSS, JS.     OpenAI API
+          Developed an interactive AI-powered chatbot capable of responding to user queries intelligently.</p>
+        <a href="https://www.linkedin.com/posts/sapna-meena-106555204_aichatbot-webdevelopment-openai-activity-7306936316422688768-sVzC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADQM81YBzGuG77pM96-rKDVsbNine8XtGRM" target="_blank">View Source Code</a>
+      </div>
+       <!-- Project Card 4: Game Project -->
+       <div class="project-card">
+        <video preload="auto" controls>
+          <source src="\game.mp4" type="video/mp4">
+                </video>
+        <h3>Game Project</h3>
+        <p>Tech Stack: HTML, CSS, JavaScript, Canvas API
+         <br> This project involved building an interactive game with dynamic graphics and animations.</p>
+        <a href=" https://www.linkedin.com/posts/sapna-meena-106555204_coding-shery-activity-7164463895447912449-n9CG?" target="_blank">View Source Code</a>
+      </div>
+<!-- Project Card 5:website -->
+<div class="project-card">
+  <video preload="auto" controls>
+    <source src="\product 4th art.mp4" type="video/mp4">
+          </video>
+  <h3>Product-AI-Website</h3>
+  <p>A modern ai website designed for an enhanced user experience.<br>
+    This post likely showcases  UI/UX , and creative problem-solving
+  </p>
+  <a href=" https://www.linkedin.com/posts/sapna-meena-106555204_coding-shery-activity-7181696796048384002-HCWi?"
+ target="_blank">View Source Code</a>
+</div>
+
+    </div>
+  </section>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>GET IN TOUCH</h2>
+    
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+  
+      <!-- Social Media Links -->
+      <div class="social-links">
+        <a href="sapnameena246810@gmail.com" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGwOsd54b-rpU0KXeHyfRbgMsGjBFznUu4Q&s" alt="Email" />
+        </a>
+        <a href="https://www.linkedin.com/in/sapna-meena-106555204/" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvpuxPO4bIwBa8roGzLkn5ZdVniXNcYAa7AQ&s" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/SAPNAMEENA33" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa8FV8SCzjlNqk2yzFPetRZbY7j258d8-MuA&s" alt="GitHub" />
+        </a>
+      </div>
+    </div>
+  </section>
+  
+<footer>
+    <p>© 2025 Sapna. All Rights Reserved.</p>
+</footer>
+
+
+   <script src="script.js"></script>
+ 
+</body>
+</html>
